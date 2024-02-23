@@ -12,13 +12,13 @@ local diagnostics = {
   sources = { "nvim_diagnostic" },
   sections = { "error", "warn" },
   symbols = { error = " ", warn = " " },
-  colored = false,
-  always_visible = true,
+  colored = true,
+  always_visible = false,
 }
 
 local diff = {
   "diff",
-  colored = false,
+  colored = true,
   symbols = { added = "", modified = "", removed = "" }, -- changes diff symbols
   cond = hide_in_width,
 }
@@ -42,6 +42,7 @@ lualine.setup {
     globalstatus = true,
     icons_enabled = true,
     theme = "auto",
+    -- theme = "gruvbox",
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     disabled_filetypes = { "alpha", "dashboard" },
