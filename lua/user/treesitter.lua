@@ -13,5 +13,6 @@ configs.setup({
 	autopairs = {
 		enable = true,
 	},
-	indent = { enable = true, disable = { "python", "css" } },
+  -- indent is buggy in nvim-treesitter
+	-- indent = { enable = true, disable = { "python", "css" } },
 })
