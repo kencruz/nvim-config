@@ -116,9 +116,16 @@ return packer.startup(function(use)
   use { "simrat39/rust-tools.nvim", commit = "676187908a1ce35ffcd727c654ed68d851299d3e" } -- rust tools, no longer maintained -> replace with mrcjkb/rustaceanvim
   -- use { "simrat39/rust-tools.nvim", commit = "b297167d9e01accc9b9afe872ce91e791df2dde0" } -- rust tools, no longer maintained -> replace with mrcjkb/rustaceanvim
 
-  -- Telescope
-  use { "nvim-telescope/telescope.nvim", commit = "24778fd72fcf39a0b1a6f7c6f4c4e01fef6359a2" } -- latest requires >=0.9.0
-  -- use { "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" } -- latest requires >=0.9.0
+   -- Telescope
+  use { "nvim-telescope/telescope.nvim",
+    commit = "24778fd72fcf39a0b1a6f7c6f4c4e01fef6359a2",
+    requires = {
+      { "nvim-telescope/telescope-live-grep-args.nvim", commit = "731a046da7dd3adff9de871a42f9b7fb85f60f47" }
+    },
+    config = function()
+      require("telescope").load_extension("live_grep_args")
+    end
+  } -- latest requires >=0.9.0
 
   -- Treesitter
   use {
