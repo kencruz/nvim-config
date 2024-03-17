@@ -145,6 +145,15 @@ return packer.startup(function(use)
   use { "lewis6991/gitsigns.nvim", commit = "c5ff7628e19a47ec14d3657294cc074ecae27b99" } -- the latest requires >= 0.8.0
   -- use { "lewis6991/gitsigns.nvim", commit = "c18e016864c92ecf9775abea1baaa161c28082c3" } -- the latest requires >= 0.8.0
 
+  -- nvim v0.7.2
+  use({
+      "kdheepak/lazygit.nvim", commit = "10a5f30536dc2d4abe36d410d83149272ea457fa",
+      -- optional for floating window border decoration
+      requires = {
+          "nvim-lua/plenary.nvim",
+      },
+  })
+
   -- DAP
   use { "mfussenegger/nvim-dap", commit = "9adbfdca13afbe646d09a8d7a86d5d031fb9c5a5" } -- the latest requires >= 0.9.0
   -- use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" } -- the latest requires >= 0.9.0
