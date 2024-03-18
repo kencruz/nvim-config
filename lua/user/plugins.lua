@@ -101,6 +101,14 @@ return packer.startup(function(use)
 
   -- LSP
   use { "neovim/nvim-lspconfig", commit = "8917d2c830e04bf944a699b8c41f097621283828" } -- enable LSP, latest requires >=0.8
+  use {
+    "nvimdev/lspsaga.nvim",
+    commit = "01dc5ea5916abbe3158d2661e21d90dcc04d7c47",
+    after = "nvim-lspconfig",
+    config = function()
+        require('lspsaga').setup({})
+    end,
+  } -- enhanced LSP features, using this for hover peek definitions, latest requires >=0.8
   -- use { "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" } -- enable LSP, latest requires >=0.8
   --[[ use { "williamboman/nvim-lsp-installer", commit = "17e0bfa5f2c8854d1636fcd036dc8284db136baa" } -- simple to use language server installer, latest requires >=0.7, no longer maintained -> replace with mason.nvim ]]
   -- use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer, latest requires >=0.7, no longer maintained -> replace with mason.nvim
@@ -115,6 +123,13 @@ return packer.startup(function(use)
   use { "rust-lang/rust.vim", commit = "889b9a7515db477f4cb6808bef1769e53493c578" } -- rust lang support, fixes :RustFmt
   use { "simrat39/rust-tools.nvim", commit = "676187908a1ce35ffcd727c654ed68d851299d3e" } -- rust tools, no longer maintained -> replace with mrcjkb/rustaceanvim
   -- use { "simrat39/rust-tools.nvim", commit = "b297167d9e01accc9b9afe872ce91e791df2dde0" } -- rust tools, no longer maintained -> replace with mrcjkb/rustaceanvim
+  use {
+    "pmizio/typescript-tools.nvim",
+    requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    config = function()
+      require("typescript-tools").setup {}
+    end,
+  }
 
    -- Telescope
   use { "nvim-telescope/telescope.nvim",
