@@ -145,7 +145,8 @@ return packer.startup(function(use)
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    commit = "5cc562748729b6dc9563ea5a3d676ff102ab38b1",
+    commit = "223f8dd2e475ab790d9fede23681cd3c016fab79",
+    -- commit = "5cc562748729b6dc9563ea5a3d676ff102ab38b1", old 
   } -- the latest requires >=0.9.2
   -- use {
   --   "nvim-treesitter/nvim-treesitter",
@@ -155,6 +156,13 @@ return packer.startup(function(use)
 
   use { "nvim-treesitter/nvim-treesitter-context", commit = "85cf977181fb8e816e47ac05df7f756e9cb72caf"} -- for sticky function signatures, the latest requires >= v0.9.0
   -- use { "nvim-treesitter/nvim-treesitter-context", commit = "d28654b012d4c56beafec630ef7143275dff76f8"} -- for sticky function signatures, the latest requires >= v0.9.0
+
+  use{
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    commit = "23b820146956b3b681c19e10d3a8bc0cbd9a1d4c",
+    after = "nvim-treesitter",
+    requires = "nvim-treesitter/nvim-treesitter",
+  }
 
   -- Git
   use { "lewis6991/gitsigns.nvim", commit = "c5ff7628e19a47ec14d3657294cc074ecae27b99" } -- the latest requires >= 0.8.0
