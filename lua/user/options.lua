@@ -40,3 +40,4 @@ vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
 vim.o.relativenumber = true
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions" -- improved autosession support

@@ -10,10 +10,12 @@ configs.setup({
       swap_next = {
         ["<leader>ta"] = "@parameter.inner",
         ["<leader>tf"] = "@function.outer",
+        ["<leader>tv"] = "@assignment.outer",
       },
       swap_previous = {
         ["<leader>tA"] = "@parameter.inner",
         ["<leader>tF"] = "@function.outer",
+        ["<leader>tV"] = "@assignment.outer",
       },
     },
   },

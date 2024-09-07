@@ -53,7 +53,8 @@ return packer.startup(function(use)
   -- use { "kyazdani42/nvim-web-devicons", commit = "8d2c5337f0a2d0a17de8e751876eeb192b32310e" } -- the latest requires >= 0.7.0
   use { "nvim-tree/nvim-tree.lua", commit = "e9c5abe073a973f54d3ca10bfe30f253569f4405" } -- the latest requires >=0.8.0
   -- use { "kyazdani42/nvim-tree.lua", commit = "bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243" } -- the latest requires >=0.8.0
-  use { "akinsho/bufferline.nvim", commit = "e48ce1805697e4bb97bc171c081e849a65859244" } -- the latest requires >=0.8
+  use { "akinsho/bufferline.nvim", commit = "99337f63f0a3c3ab9519f3d1da7618ca4f91cffe" } -- the latest requires >=0.8
+  -- use { "akinsho/bufferline.nvim", commit = "e48ce1805697e4bb97bc171c081e849a65859244" } -- the latest requires >=0.8
   -- use { "akinsho/bufferline.nvim", commit = "c78b3ecf9539a719828bca82fc7ddb9b3ba0c353" } -- the latest requires >=0.8
   use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" } -- really old, 6y/o vimscript
   use { "nvim-lualine/lualine.nvim", commit = "566b7036f717f3d676362742630518a47f132fff" } -- the latest requires >= 0.7
@@ -71,6 +72,15 @@ return packer.startup(function(use)
   use { "machakann/vim-sandwich", commit = "c5a2cc438ce6ea2005c556dc833732aa53cae21a" } -- tags surround plugin, vimscript
   use({ "iamcco/markdown-preview.nvim", commit = "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
   -- use({ "iamcco/markdown-preview.nvim", commit = "02cc3874738bc0f86e4b91f09b8a0ac88aef8e96", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  use {
+    'rmagatti/auto-session',
+    commit = "322d82fa7cb455bc82a30f4e4907af696afdfb45",
+    config = function()
+      require("auto-session").setup {
+        auto_session_suppress_dirs = { "~/", "~/Downloads", "/"},
+      }
+    end
+  }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }
@@ -127,7 +137,14 @@ return packer.startup(function(use)
     "pmizio/typescript-tools.nvim",
     requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     config = function()
-      require("typescript-tools").setup {}
+      require("typescript-tools").setup {
+        settings = {
+          tsserver_file_preferences = {
+          importModuleSpecifierPreference = "relative",
+          quotePreference = "single",
+          }
+        }
+      }
     end,
   }
 
@@ -135,10 +152,12 @@ return packer.startup(function(use)
   use { "nvim-telescope/telescope.nvim",
     commit = "24778fd72fcf39a0b1a6f7c6f4c4e01fef6359a2",
     requires = {
-      { "nvim-telescope/telescope-live-grep-args.nvim", commit = "731a046da7dd3adff9de871a42f9b7fb85f60f47" }
+      { "nvim-telescope/telescope-live-grep-args.nvim", commit = "731a046da7dd3adff9de871a42f9b7fb85f60f47" },
+      { "mollerhoj/telescope-recent-files.nvim", commit = "23b29aa701cd07c723282b3094e1a4dfc231f557" }
     },
     config = function()
       require("telescope").load_extension("live_grep_args")
+      require("telescope").load_extension("recent-files")
     end
   } -- latest requires >=0.9.0
 
@@ -176,6 +195,7 @@ return packer.startup(function(use)
           "nvim-lua/plenary.nvim",
       },
   })
+  use { "f-person/git-blame.nvim", commit = "408d5487d908dfe5d48e5645d8b27ddcc16b11e0" } -- the latest requires >= 0.8.0
 
   -- DAP
   use { "mfussenegger/nvim-dap", commit = "9adbfdca13afbe646d09a8d7a86d5d031fb9c5a5" } -- the latest requires >= 0.9.0

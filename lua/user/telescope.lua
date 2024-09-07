@@ -13,6 +13,12 @@ telescope.setup {
     path_display = { "smart" },
     file_ignore_patterns = { ".git/", "node_modules", "package-lock.json" },
 
+    -- pickers = {
+    --   oldfiles = {
+    --     cwd_only = true
+    --   },
+    -- },
+
     mappings = {
       i = {
         ["<Down>"] = actions.cycle_history_next,

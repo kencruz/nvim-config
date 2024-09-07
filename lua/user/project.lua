@@ -9,7 +9,7 @@ project.setup({
 
 	-- patterns used to detect root dir, when **"pattern"** is in detection_methods
 	-- patterns = { ".git", "Makefile", "package.json", "Cargo.toml" },
-	patterns = { ".git", "Makefile", "Cargo.toml" },
+	patterns = { ".git", "Makefile" },
 })
 
 local tele_status_ok, telescope = pcall(require, "telescope")
