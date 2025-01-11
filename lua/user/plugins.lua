@@ -64,8 +64,8 @@ return packer.startup(function(use)
   use { "ahmedkhalf/project.nvim", commit = "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" } -- the latest requires >= 0.5.0
   -- use { "ahmedkhalf/project.nvim", commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" } -- the latest requires >= 0.5.0
   -- use { "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" } -- the latest requires >= 0.7, no longer needed in 0.9 see readme
-  use { "lukas-reineke/indent-blankline.nvim", main="ibl", commit = "12e92044d313c54c438bd786d11684c88f6f78cd" }
-  -- use { "lukas-reineke/indent-blankline.nvim", commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" }
+  use { "lukas-reineke/indent-blankline.nvim", main="ibl", commit = "259357fa4097e232730341fa60988087d189193a" } -- fixes high cpu & freeze in deleting lines (tree-sitter related)
+  -- use { "lukas-reineke/indent-blankline.nvim", main="ibl", commit = "12e92044d313c54c438bd786d11684c88f6f78cd" }
   use { "goolord/alpha-nvim", commit = "4b36c1ca9ea475bdc006896657cf1ccc486aeffa" }
   -- use { "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" }
   use { "norcalli/nvim-colorizer.lua", commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6" } -- the latest requires >= 0.4.0, last update 4 y/o
