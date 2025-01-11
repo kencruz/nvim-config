@@ -39,6 +39,7 @@ keymap("n", "<M-l>", ":BufferLineMoveNext<CR>", opts)
 keymap("n", "<M-h>", ":BufferLineMovePrev<CR>", opts)
 keymap("n", "<M-L>", ":lua require'bufferline'.move_to(-1)<CR>", opts)
 keymap("n", "<M-H>", ":lua require'bufferline'.move_to(1)<CR>", opts)
+keymap("n", "<leader>bp", ":BufferLineTogglePin<CR>", opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
@@ -73,7 +74,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
 -- keymap("n", "<leader>ff", ":lua require'telescope'.extensions['recent-files'].recent_files({})<CR>", opts)
-keymap("n", "<leader>fF", ":lua require'telescope.builtin'.oldfiles{}<CR>", opts)
+keymap("n", "<leader>fF", ":Telescope frecency<CR>", opts)
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)

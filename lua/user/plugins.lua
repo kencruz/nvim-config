@@ -102,6 +102,10 @@ return packer.startup(function(use)
   -- use { "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" }
   use { "hrsh7th/cmp-nvim-lua", commit = "f12408bdb54c39c23e67cab726264c10db33ada8" }
   -- use { "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" }
+  -- gitlab duo, remove when trial is complete
+  -- use {
+  --   "git@gitlab.com:gitlab-org/editor-extensions/gitlab.vim.git", commit = "74a845366a7edf6b400ab9a4d2ec83bacadea930"
+  -- }
 
   -- snippets
   use { "L3MON4D3/LuaSnip", commit = "2dbef19461198630b3d7c39f414d09fb07d1fdd2" } --snippet engine, requires >= 0.7
@@ -153,11 +157,13 @@ return packer.startup(function(use)
     commit = "24778fd72fcf39a0b1a6f7c6f4c4e01fef6359a2",
     requires = {
       { "nvim-telescope/telescope-live-grep-args.nvim", commit = "731a046da7dd3adff9de871a42f9b7fb85f60f47" },
+      { "nvim-telescope/telescope-frecency.nvim", commit = "f67baca08423a6fd00167801a54db38e0b878063" },
       { "mollerhoj/telescope-recent-files.nvim", commit = "23b29aa701cd07c723282b3094e1a4dfc231f557" }
     },
     config = function()
       require("telescope").load_extension("live_grep_args")
       require("telescope").load_extension("recent-files")
+      require("telescope").load_extension("frecency")
     end
   } -- latest requires >=0.9.0
 
