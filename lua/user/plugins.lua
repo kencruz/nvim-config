@@ -64,7 +64,8 @@ return lazy.setup({
     { "rainglow/vim", commit = "837fd7292274e0ee2f3b5aee4519c3f74d7dc3d1", name = "rainglow-themes" },
 
     -- cmp plugins
-    { "hrsh7th/nvim-cmp", commit = "538e37ba87284942c1d76ed38dd497e54e65b891" }, -- The completion plugin
+    { "hrsh7th/nvim-cmp", commit = "5a11682453ac6b13dbf32cd403da4ee9c07ef1c3" }, -- The completion plugin
+    -- { "hrsh7th/nvim-cmp", commit = "538e37ba87284942c1d76ed38dd497e54e65b891" }, -- The completion plugin
     { "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" }, -- buffer completions
     { "hrsh7th/cmp-path", commit = "91ff86cd9c29299a64f968ebb45846c485725f23" }, -- path completions
     { "saadparwaiz1/cmp_luasnip", commit = "05a9ab28b53f71d1aece421ef32fee2cb857a843" }, -- snippet completions
@@ -86,9 +87,11 @@ return lazy.setup({
     -- { "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" } -- enable LSP, latest requires >=0.8
     { "williamboman/mason.nvim", commit = "e110bc3be1a7309617cecd77bfe4bf86ba1b8134" },
     { "williamboman/mason-lspconfig.nvim", commit = "3ba1b92b771f33256b4969d696b82c8ae7075364" },
-    { "nvimtools/none-ls.nvim", commit = "e64f03f3f77bd6854c3b3c5cfffcc806a0c0f66a" }, -- for formatters and linters, no longer maintained -> replace with none-ls.nvim
+    -- { "nvimtools/none-ls.nvim", commit = "f41624ea1a73f020ddbd33438f74abb95ea17d55" }, -- for formatters and linters, no longer maintained -> replace with none-ls.nvim
+    -- { "nvimtools/none-ls.nvim", commit = "e64f03f3f77bd6854c3b3c5cfffcc806a0c0f66a" }, -- for formatters and linters, no longer maintained -> replace with none-ls.nvim
     -- { "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" } -- for formatters and linters, no longer maintained -> replace with none-ls.nvim
-    { "RRethy/vim-illuminate", commit = "3bd2ab64b5d63b29e05691e624927e5ebbf0fb86" },
+
+    { "RRethy/vim-illuminate", commit = "b5713e6ca3f627b46968386d6d3f24d374d3cb17" },
 
     -- Languages
     { "rust-lang/rust.vim", commit = "889b9a7515db477f4cb6808bef1769e53493c578" }, -- rust lang support, fixes :RustFmt
@@ -124,11 +127,11 @@ return lazy.setup({
     -- Treesitter
     {
       "nvim-treesitter/nvim-treesitter",
-      commit = "223f8dd2e475ab790d9fede23681cd3c016fab79",
-    }, -- the latest requires >=0.9.2
+      commit = "f2bd62c6568de54ca1b8fb0a8de04a41442934cb",
+    }, -- the latest requires >=0.10.0
     { "nvim-treesitter/playground", commit = "90d2b3e1729363f96ce2c23f16129534df893bbf" }, -- deprecated, built in neovim
 
-    { "nvim-treesitter/nvim-treesitter-context", commit = "85cf977181fb8e816e47ac05df7f756e9cb72caf"}, -- for sticky function signatures, the latest requires >= v0.9.0
+    { "nvim-treesitter/nvim-treesitter-context", commit = "198720b4016af04c9590f375d714d5bf8afecc1a"}, -- for sticky function signatures, the latest requires >= v0.11.0
 
     {
       "nvim-treesitter/nvim-treesitter-textobjects",
