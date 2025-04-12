@@ -69,7 +69,8 @@ return lazy.setup({
     { "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" }, -- buffer completions
     { "hrsh7th/cmp-path", commit = "91ff86cd9c29299a64f968ebb45846c485725f23" }, -- path completions
     { "saadparwaiz1/cmp_luasnip", commit = "05a9ab28b53f71d1aece421ef32fee2cb857a843" }, -- snippet completions
-    { "hrsh7th/cmp-nvim-lsp", commit = "5af77f54de1b16c34b23cba810150689a3a90312" },
+    { "hrsh7th/cmp-nvim-lsp", commit = "99c4e3ea26262dbe457d8fd57b1136ede6157531" },
+    -- { "hrsh7th/cmp-nvim-lsp", commit = "5af77f54de1b16c34b23cba810150689a3a90312" },
     { "hrsh7th/cmp-nvim-lua", commit = "f12408bdb54c39c23e67cab726264c10db33ada8" },
 
     -- snippets
@@ -80,10 +81,11 @@ return lazy.setup({
     { "neovim/nvim-lspconfig", commit = "8917d2c830e04bf944a699b8c41f097621283828" }, -- enable LSP, latest requires >=0.8
     {
       "nvimdev/lspsaga.nvim",
-      commit = "01dc5ea5916abbe3158d2661e21d90dcc04d7c47",
+      commit = "778d56ff9b387dacd14ae648ed5604394b486f51",
       dependencies = "nvim-lspconfig",
       opts = {}
     }, -- enhanced LSP features, using this for hover peek definitions, latest requires >=0.8
+    -- { "neovim/nvim-lspconfig", commit = "01dc5ea5916abbe3158d2661e21d90dcc04d7c47" } -- enable LSP, latest requires >=0.8
     -- { "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" } -- enable LSP, latest requires >=0.8
     { "williamboman/mason.nvim", commit = "e110bc3be1a7309617cecd77bfe4bf86ba1b8134" },
     { "williamboman/mason-lspconfig.nvim", commit = "3ba1b92b771f33256b4969d696b82c8ae7075364" },
@@ -98,6 +100,7 @@ return lazy.setup({
     { "simrat39/rust-tools.nvim", commit = "676187908a1ce35ffcd727c654ed68d851299d3e" }, -- rust tools, no longer maintained -> replace with mrcjkb/rustaceanvim
     {
       "pmizio/typescript-tools.nvim",
+      commit = "a4109c70e7d6a3a86f971cefea04ab6720582ba9",
       dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
       opts = {
         settings = {
@@ -111,7 +114,8 @@ return lazy.setup({
 
      -- Telescope
     { "nvim-telescope/telescope.nvim",
-      commit = "24778fd72fcf39a0b1a6f7c6f4c4e01fef6359a2",
+      commit = "a4ed82509cecc56df1c7138920a1aeaf246c0ac5",
+      -- commit = "24778fd72fcf39a0b1a6f7c6f4c4e01fef6359a2",
       dependencies = {
         { "nvim-telescope/telescope-live-grep-args.nvim", commit = "731a046da7dd3adff9de871a42f9b7fb85f60f47" },
         { "nvim-telescope/telescope-frecency.nvim", commit = "f67baca08423a6fd00167801a54db38e0b878063" },
