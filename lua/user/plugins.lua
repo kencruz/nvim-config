@@ -65,12 +65,10 @@ return lazy.setup({
 
     -- cmp plugins
     { "hrsh7th/nvim-cmp", commit = "5a11682453ac6b13dbf32cd403da4ee9c07ef1c3" }, -- The completion plugin
-    -- { "hrsh7th/nvim-cmp", commit = "538e37ba87284942c1d76ed38dd497e54e65b891" }, -- The completion plugin
     { "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" }, -- buffer completions
     { "hrsh7th/cmp-path", commit = "91ff86cd9c29299a64f968ebb45846c485725f23" }, -- path completions
     { "saadparwaiz1/cmp_luasnip", commit = "05a9ab28b53f71d1aece421ef32fee2cb857a843" }, -- snippet completions
     { "hrsh7th/cmp-nvim-lsp", commit = "99c4e3ea26262dbe457d8fd57b1136ede6157531" },
-    -- { "hrsh7th/cmp-nvim-lsp", commit = "5af77f54de1b16c34b23cba810150689a3a90312" },
     { "hrsh7th/cmp-nvim-lua", commit = "f12408bdb54c39c23e67cab726264c10db33ada8" },
 
     -- snippets
@@ -78,22 +76,19 @@ return lazy.setup({
     { "rafamadriz/friendly-snippets", commit = "69a2c1675b66e002799f5eef803b87a12f593049" }, -- a bunch of snippets to use
 
     -- LSP
-    { "neovim/nvim-lspconfig", commit = "8917d2c830e04bf944a699b8c41f097621283828" }, -- enable LSP, latest requires >=0.8
+    { "neovim/nvim-lspconfig", commit = "61e5109c8cf24807e4ae29813a3a82b31821dd45" }, -- enable LSP, latest requires >=0.8
+    -- { "neovim/nvim-lspconfig", commit = "8917d2c830e04bf944a699b8c41f097621283828" }, -- enable LSP, latest requires >=0.8
     {
       "nvimdev/lspsaga.nvim",
       commit = "778d56ff9b387dacd14ae648ed5604394b486f51",
       dependencies = "nvim-lspconfig",
       opts = {}
     }, -- enhanced LSP features, using this for hover peek definitions, latest requires >=0.8
-    -- { "neovim/nvim-lspconfig", commit = "01dc5ea5916abbe3158d2661e21d90dcc04d7c47" } -- enable LSP, latest requires >=0.8
-    -- { "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" } -- enable LSP, latest requires >=0.8
-    { "williamboman/mason.nvim", commit = "e110bc3be1a7309617cecd77bfe4bf86ba1b8134" },
-    { "williamboman/mason-lspconfig.nvim", commit = "3ba1b92b771f33256b4969d696b82c8ae7075364" },
-    -- { "nvimtools/none-ls.nvim", commit = "f41624ea1a73f020ddbd33438f74abb95ea17d55" }, -- for formatters and linters, no longer maintained -> replace with none-ls.nvim
-    -- { "nvimtools/none-ls.nvim", commit = "e64f03f3f77bd6854c3b3c5cfffcc806a0c0f66a" }, -- for formatters and linters, no longer maintained -> replace with none-ls.nvim
-    -- { "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" } -- for formatters and linters, no longer maintained -> replace with none-ls.nvim
+    { "williamboman/mason.nvim", commit = "7c7318e8bae7e3536ef6b9e86b9e38e74f2e125e" },
+    { "williamboman/mason-lspconfig.nvim", commit = "d39a75bbce4b8aad5d627191ea915179c77c100f"},
+    { "nvimtools/none-ls.nvim", commit = "90e4a27ccaa25979a6b732b9f06dfa43b54957b7", dependencies = { "nvimtools/none-ls-extras.nvim", commit = "1214d729e3408470a7b7a428415a395e5389c13c" }}, -- for formatters and linters, no longer maintained -> replace with none-ls.nvim
 
-    { "RRethy/vim-illuminate", commit = "b5713e6ca3f627b46968386d6d3f24d374d3cb17" },
+    { "RRethy/vim-illuminate", commit = "fbc16dee336d8cc0d3d2382ea4a53f4a29725abf" },
 
     -- Languages
     { "rust-lang/rust.vim", commit = "889b9a7515db477f4cb6808bef1769e53493c578" }, -- rust lang support, fixes :RustFmt
@@ -157,8 +152,8 @@ return lazy.setup({
     { "f-person/git-blame.nvim", commit = "408d5487d908dfe5d48e5645d8b27ddcc16b11e0" }, -- the latest requires >= 0.8.0
 
     -- DAP
-    { "mfussenegger/nvim-dap", commit = "9adbfdca13afbe646d09a8d7a86d5d031fb9c5a5" }, -- the latest requires >= 0.9.0
-    { "rcarriga/nvim-dap-ui", commit = "a62e86b124a94ad1f34a3f936ea146d00aa096d1" },
-    { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }, -- the latest requires >= 0.5.0
+    -- { "mfussenegger/nvim-dap", commit = "9adbfdca13afbe646d09a8d7a86d5d031fb9c5a5" }, -- the latest requires >= 0.9.0
+    -- { "rcarriga/nvim-dap-ui", commit = "a62e86b124a94ad1f34a3f936ea146d00aa096d1" },
+    -- { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }, -- the latest requires >= 0.5.0
   },
 })

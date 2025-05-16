@@ -32,6 +32,17 @@ if not lspconfig_status_ok then
   return
 end
 
+-- lspconfig.eslint.setup({
+--   flags = {
+--     allow_incremental_sync = false,
+--     debounce_text_changes = 1000,
+--   },
+-- })
+
+-- lspconfig.eslint.setup {
+--   cmd = { "vscode-eslint-language-server", "--stdio" },
+-- }
+
 local opts = {}
 
 for _, server in pairs(servers) do
@@ -48,6 +59,15 @@ for _, server in pairs(servers) do
   if server == "pyright" then
     local pyright_opts = require "user.lsp.settings.pyright"
     opts = vim.tbl_deep_extend("force", pyright_opts, opts)
+  end
+
+  if server == "eslint" then
+    opts['settings.flags'] = {
+      allow_incremental_sync = true,
+      debounce_text_changes = 1000,
+    }
+    opts['settings.run'] = 'onSave'
+    -- opts.cmd = { "/nix/store/y0hdl91a6ds51n8jajh50pljicrx5yca-eslint_d-14.3.0/bin/eslint_d"}
   end
 
   lspconfig[server].setup(opts)
