@@ -62,12 +62,58 @@ for _, server in pairs(servers) do
   end
 
   if server == "eslint" then
-    opts['settings.flags'] = {
-      allow_incremental_sync = true,
-      debounce_text_changes = 1000,
+    -- opts['settings.flags'] = {
+    --   allow_incremental_sync = true,
+    --   debounce_text_changes = 1000,
+    -- }
+
+    local eslint_opts = {
+      flags = {
+        allow_incremental_sync = false,
+        debounce_text_changes = 2000,
+      },
+      settings = {
+        flags = {
+          allow_incremental_sync = false,
+          debounce_text_changes = 2000,
+        },
+        codeAction = {
+          disableRuleComment = {
+            enable = true,
+            location = "separateLine"
+          },
+          showDocumentation = {
+            enable = true
+          }
+        },
+        codeActionOnSave = {
+          enable = false,
+          mode = "all"
+        },
+        experimental = {
+          useFlatConfig = false
+        },
+        format = true,
+        nodePath = "",
+        onIgnoredFiles = "off",
+        problems = {
+          shortenToSingleLine = false
+        },
+        quiet = false,
+        rulesCustomizations = {},
+        run = "onSave",
+        useESLintClass = false,
+        validate = "on",
+        workingDirectory = {
+          mode = "location"
+        }
+      }
     }
-    opts['settings.run'] = 'onSave'
-    -- opts.cmd = { "/nix/store/y0hdl91a6ds51n8jajh50pljicrx5yca-eslint_d-14.3.0/bin/eslint_d"}
+
+    opts = vim.tbl_deep_extend("force", eslint_opts, opts)
+    -- opts['settings']['run'] = 'onSave'
+    -- opts.cmd = { "eslint_d", "--stdin", "--stdin-filename"}
+    -- opts.cmd = { "/nix/store/y0hdl91a6ds51n8jajh50pljicrx5yca-eslint_d-14.3.0/bin/eslint_d", "--stdio"}
   end
 
   lspconfig[server].setup(opts)

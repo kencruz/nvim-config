@@ -80,6 +80,10 @@ keymap("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.l
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":lua require'telescope.builtin'.buffers{ sort_mru = true }<CR>", opts)
+keymap("n", "<leader>fr", ":lua require'telescope.builtin'.registers{}<CR>", opts)
+keymap("n", "<leader>fq", ":lua require'telescope.builtin'.command_history{}<CR>", opts)
+keymap("n", "<leader>fs", ":lua require'telescope.builtin'.search_history{}<CR>", opts)
+keymap("n", "<leader>fm", ":lua require'telescope.builtin'.marks{}<CR>", opts)
 -- keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fc", ":Telescope commands<CR>", opts)
 keymap("n", "<leader>fd", ":Telescope diagnostics<CR>", opts)
@@ -94,6 +98,9 @@ keymap("n", "<leader>gf", ":LazyGitCurrentFile<CR>", opts)
 -- keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').locked('toggle.linewise.current')()<CR>", opts)
 keymap("x", "<leader>/", "<ESC><CMD>lua require('Comment.api').locked('comment.linewise')(vim.fn.visualmode())<CR>")
+
+-- carriage return fix
+keymap("n", "<leader>cr", ":%s/\\r//g<CR>", opts)
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)

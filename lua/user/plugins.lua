@@ -36,6 +36,7 @@ return lazy.setup({
     { "nvim-lualine/lualine.nvim", commit = "566b7036f717f3d676362742630518a47f132fff" }, -- the latest requires >= 0.7
     { "akinsho/toggleterm.nvim", commit = "e3805fed94d487b81e9c21548535cc820f62f840" }, -- the latest requires >= 0.7
     { "ahmedkhalf/project.nvim", commit = "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" }, -- the latest requires >= 0.5.0
+    { "pteroctopus/faster.nvim", commit = "9fe4717d8c8c0a6aa306bd3b4f5fac5707eca334" }, -- the latest requires >= 0.5.0
     { "lukas-reineke/indent-blankline.nvim", main="ibl", commit = "259357fa4097e232730341fa60988087d189193a" }, -- fixes high cpu & freeze in deleting lines (tree-sitter related)
     -- { "lukas-reineke/indent-blankline.nvim", main="ibl", commit = "12e92044d313c54c438bd786d11684c88f6f78cd" }
     { "goolord/alpha-nvim", commit = "4b36c1ca9ea475bdc006896657cf1ccc486aeffa" },
