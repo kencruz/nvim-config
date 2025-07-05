@@ -29,25 +29,25 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)
-keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
-keymap("n", "<leader>bh", ":lua require'bufferline'.go_to(1, true)<CR>", opts)
-keymap("n", "<leader>bl", ":lua require'bufferline'.go_to(-1, true)<CR>", opts)
+-- keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)
+-- keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
+-- keymap("n", "<leader>bh", ":lua require'bufferline'.go_to(1, true)<CR>", opts)
+-- keymap("n", "<leader>bl", ":lua require'bufferline'.go_to(-1, true)<CR>", opts)
 
 -- Move buffers
-keymap("n", "<M-l>", ":BufferLineMoveNext<CR>", opts)
-keymap("n", "<M-h>", ":BufferLineMovePrev<CR>", opts)
-keymap("n", "<M-L>", ":lua require'bufferline'.move_to(-1)<CR>", opts)
-keymap("n", "<M-H>", ":lua require'bufferline'.move_to(1)<CR>", opts)
-keymap("n", "<leader>bp", ":BufferLineTogglePin<CR>", opts)
+-- keymap("n", "<M-l>", ":BufferLineMoveNext<CR>", opts)
+-- keymap("n", "<M-h>", ":BufferLineMovePrev<CR>", opts)
+-- keymap("n", "<M-L>", ":lua require'bufferline'.move_to(-1)<CR>", opts)
+-- keymap("n", "<M-H>", ":lua require'bufferline'.move_to(1)<CR>", opts)
+-- keymap("n", "<leader>bp", ":BufferLineTogglePin<CR>", opts)
+
+-- Close buffers
+-- keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+-- keymap("n", "<leader>bch", ":BufferLineCloseLeft<CR>", opts) -- close buffers to the left
+-- keymap("n", "<leader>bcl", ":BufferLineCloseRight<CR>", opts) -- close buffers to the right
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
-
--- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
-keymap("n", "<leader>bch", ":BufferLineCloseLeft<CR>", opts) -- close buffers to the left
-keymap("n", "<leader>bcl", ":BufferLineCloseRight<CR>", opts) -- close buffers to the right
 
 -- Close window
 keymap("n", "<leader>w", ":close<CR>")

@@ -31,7 +31,7 @@ return lazy.setup({
     { "JoosepAlviste/nvim-ts-context-commentstring", commit = "1277b4a1f451b0f18c0790e1a7f12e1e5fdebfee" }, -- the latest requires 0.9.4
     { "kyazdani42/nvim-web-devicons", commit = "140edfcf25093e8b321d13e154cbce89ee868ca0" }, -- the latest requires >= 0.7.0
     { "nvim-tree/nvim-tree.lua", commit = "e9c5abe073a973f54d3ca10bfe30f253569f4405" }, -- the latest requires >=0.8.0
-    { "akinsho/bufferline.nvim", commit = "99337f63f0a3c3ab9519f3d1da7618ca4f91cffe" }, -- the latest requires >=0.8
+    -- { "akinsho/bufferline.nvim", commit = "99337f63f0a3c3ab9519f3d1da7618ca4f91cffe" }, -- the latest requires >=0.8
     { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" }, -- really old, 6y/o vimscript
     { "nvim-lualine/lualine.nvim", commit = "566b7036f717f3d676362742630518a47f132fff" }, -- the latest requires >= 0.7
     { "akinsho/toggleterm.nvim", commit = "e3805fed94d487b81e9c21548535cc820f62f840" }, -- the latest requires >= 0.7
@@ -78,13 +78,17 @@ return lazy.setup({
 
     -- LSP
     { "neovim/nvim-lspconfig", commit = "61e5109c8cf24807e4ae29813a3a82b31821dd45" }, -- enable LSP, latest requires >=0.8
+
     -- { "neovim/nvim-lspconfig", commit = "8917d2c830e04bf944a699b8c41f097621283828" }, -- enable LSP, latest requires >=0.8
+
+    -- enhanced LSP features, using this for hover peek definitions, latest requires >=0.8
     {
       "nvimdev/lspsaga.nvim",
       commit = "778d56ff9b387dacd14ae648ed5604394b486f51",
       dependencies = "nvim-lspconfig",
       opts = {}
-    }, -- enhanced LSP features, using this for hover peek definitions, latest requires >=0.8
+    },
+
     { "williamboman/mason.nvim", commit = "7c7318e8bae7e3536ef6b9e86b9e38e74f2e125e" },
     { "williamboman/mason-lspconfig.nvim", commit = "d39a75bbce4b8aad5d627191ea915179c77c100f"},
     { "nvimtools/none-ls.nvim", commit = "90e4a27ccaa25979a6b732b9f06dfa43b54957b7", dependencies = { "nvimtools/none-ls-extras.nvim", commit = "1214d729e3408470a7b7a428415a395e5389c13c" }}, -- for formatters and linters, no longer maintained -> replace with none-ls.nvim
@@ -133,14 +137,14 @@ return lazy.setup({
 
     { "nvim-treesitter/nvim-treesitter-context", commit = "198720b4016af04c9590f375d714d5bf8afecc1a"}, -- for sticky function signatures, the latest requires >= v0.11.0
 
-    {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-      commit = "23b820146956b3b681c19e10d3a8bc0cbd9a1d4c",
-      dependencies = "nvim-treesitter/nvim-treesitter",
-    },
+    -- {
+    --   "nvim-treesitter/nvim-treesitter-textobjects",
+    --   commit = "23b820146956b3b681c19e10d3a8bc0cbd9a1d4c",
+    --   dependencies = "nvim-treesitter/nvim-treesitter",
+    -- },
 
     -- Git
-    { "lewis6991/gitsigns.nvim", commit = "c5ff7628e19a47ec14d3657294cc074ecae27b99" }, -- the latest requires >= 0.8.0
+    { "lewis6991/gitsigns.nvim", commit = "6e3ee68bc9f65b21a21582a3d80e270c7e4f2992", lazy = false }, -- the latest requires >= 0.8.0
 
     -- nvim v0.7.2
     {
