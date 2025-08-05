@@ -41,3 +41,7 @@ vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
 vim.o.relativenumber = true
 vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions,globals" -- improved autosession support
+
+-- if vim.fn.executable("nvr") == 1 then
+--   vim.env.GIT_EDITOR = "nvr --remote-tab-wait +'set bufhidden=delete'"
+-- end

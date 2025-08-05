@@ -16,6 +16,10 @@ vim.g.mapleader = " "
 --   command_mode = "c",
 
 -- Normal --
+
+-- format json
+keymap("n", "<leader>jq", ":%!jq '.'<CR>", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -71,6 +75,16 @@ keymap("v", ">", ">gv", opts)
 
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+--ToggleTerm
+keymap("n", "<leader>tn", function()
+  local name = vim.fn.input("Terminal name: ")
+  if name ~= "" then
+    vim.cmd("TermNew name=" .. name)
+  end
+end, opts)
+-- keymap("n", "<leader>tn", ":TermNew name=", opts)
+keymap("n", "<leader>ts", ":TermSelect<CR>", opts)
 
 -- Telescope
 -- keymap("n", "<leader>ff", ":lua require'telescope'.extensions['recent-files'].recent_files({})<CR>", opts)
