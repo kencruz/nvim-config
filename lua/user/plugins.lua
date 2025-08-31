@@ -84,8 +84,8 @@ return lazy.setup({
 
     -- enhanced LSP features, using this for hover peek definitions, latest requires >=0.8
     {
-      "nvimdev/lspsaga.nvim",
-      commit = "778d56ff9b387dacd14ae648ed5604394b486f51",
+      "kencruz/lspsaga.nvim",
+      commit = "4b581979d6b82fdc215f2a918ec69b8f006777d9",
       dependencies = "nvim-lspconfig",
       opts = {}
     },
@@ -94,14 +94,14 @@ return lazy.setup({
     { "williamboman/mason-lspconfig.nvim", commit = "d39a75bbce4b8aad5d627191ea915179c77c100f"},
     { "nvimtools/none-ls.nvim", commit = "90e4a27ccaa25979a6b732b9f06dfa43b54957b7", dependencies = { "nvimtools/none-ls-extras.nvim", commit = "1214d729e3408470a7b7a428415a395e5389c13c" }}, -- for formatters and linters, no longer maintained -> replace with none-ls.nvim
 
-    { "RRethy/vim-illuminate", commit = "fbc16dee336d8cc0d3d2382ea4a53f4a29725abf" },
+    { "kencruz/vim-illuminate", commit = "a658c7b5ea12eed4fc14f07456c668484c615ddf" },
 
     -- Languages
     { "rust-lang/rust.vim", commit = "889b9a7515db477f4cb6808bef1769e53493c578" }, -- rust lang support, fixes :RustFmt
     { "simrat39/rust-tools.nvim", commit = "676187908a1ce35ffcd727c654ed68d851299d3e" }, -- rust tools, no longer maintained -> replace with mrcjkb/rustaceanvim
     {
       "pmizio/typescript-tools.nvim",
-      commit = "a4109c70e7d6a3a86f971cefea04ab6720582ba9",
+      commit = "3c501d7c7f79457932a8750a2a1476a004c5c1a9",
       dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
       opts = {
         settings = {
