@@ -150,6 +150,24 @@ return {
         end
         -- custom file sorter END
 
+        -- Shorten function name
+        local keymap = vim.keymap.set
+        -- Silent keymap option
+        local opts = { silent = true }
+        -- Keymaps
+        keymap("n", "<leader>fF", ":Telescope frecency<CR>", opts)
+        keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+        keymap("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)
+        keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
+        keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
+        keymap("n", "<leader>fb", ":lua require'telescope.builtin'.buffers{ sort_mru = true }<CR>", opts)
+        keymap("n", "<leader>fr", ":lua require'telescope.builtin'.registers{}<CR>", opts)
+        keymap("n", "<leader>fq", ":lua require'telescope.builtin'.command_history{}<CR>", opts)
+        keymap("n", "<leader>fs", ":lua require'telescope.builtin'.search_history{}<CR>", opts)
+        keymap("n", "<leader>fm", ":lua require'telescope.builtin'.marks{}<CR>", opts)
+        keymap("n", "<leader>fc", ":Telescope commands<CR>", opts)
+        keymap("n", "<leader>fd", ":Telescope diagnostics<CR>", opts)
+
         telescope.setup {
           defaults = {
 

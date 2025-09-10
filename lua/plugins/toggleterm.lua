@@ -39,5 +39,18 @@ return {
                 lazygit:toggle()
             end
         end,
+        keys = {
+          {
+            "<leader>tn",
+            function()
+              local name = vim.fn.input("Terminal name: ")
+              if name ~= "" then
+                vim.cmd("TermNew name=" .. name)
+              end
+            end,
+            { silent = true },
+          },
+          { "<leader>ts", ":TermSelect<CR>", { silent = true } },
+        },
     },
 }

@@ -2,6 +2,7 @@ return {
     {
       "goolord/alpha-nvim",
       commit = "4b36c1ca9ea475bdc006896657cf1ccc486aeffa",
+      lazy = false,
       config = function()
         local status_ok, alpha = pcall(require, "alpha")
         if not status_ok then
@@ -39,5 +40,8 @@ return {
         dashboard.opts.opts.noautocmd = true
         alpha.setup(dashboard.opts)
       end,
+      keys = {
+        { "<leader>m", ":Alpha<CR>", { silent = true } },
+      },
     },
 }

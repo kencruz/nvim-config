@@ -23,10 +23,24 @@ return {
         cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done {})
       end,
     }, -- Autopairs, integrates with both cmp and treesitter, requires 0.7
-    { "numToStr/Comment.nvim", commit = "0236521ea582747b58869cb72f70ccfa967d2e89",
+    {
+      "numToStr/Comment.nvim",
+      commit = "0236521ea582747b58869cb72f70ccfa967d2e89",
+      -- lazy = false,
       config = function ()
+        -- Shorten function name
+        local keymap = vim.keymap.set
+        -- Silent keymap option
+        local opts = { silent = true }
+        keymap("n", "<leader>/", "<cmd>lua require('Comment.api').locked('toggle.linewise.current')()<CR>", opts)
+        keymap("x", "<leader>/", "<ESC><CMD>lua require('Comment.api').locked('comment.linewise')(vim.fn.visualmode())<CR>")
+
         require('Comment').setup()
       end,
+      -- keys = {
+      --   {"<leader>/", "<cmd>lua require('Comment.api').locked('toggle.linewise.current')()<CR>", { silent = true }},
+      --   {"<leader>/", "<ESC><CMD>lua require('Comment.api').locked('comment.linewise')(vim.fn.visualmode())<CR>", "x", { silent = true }},
+      -- },
     }, -- the latest requires 0.8
     { "JoosepAlviste/nvim-ts-context-commentstring", commit = "1277b4a1f451b0f18c0790e1a7f12e1e5fdebfee" }, -- the latest requires 0.9.4
     { "kyazdani42/nvim-web-devicons", commit = "140edfcf25093e8b321d13e154cbce89ee868ca0" }, -- the latest requires >= 0.7.0

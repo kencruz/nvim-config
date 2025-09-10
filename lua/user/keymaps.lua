@@ -32,24 +32,6 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Navigate buffers
--- keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)
--- keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
--- keymap("n", "<leader>bh", ":lua require'bufferline'.go_to(1, true)<CR>", opts)
--- keymap("n", "<leader>bl", ":lua require'bufferline'.go_to(-1, true)<CR>", opts)
-
--- Move buffers
--- keymap("n", "<M-l>", ":BufferLineMoveNext<CR>", opts)
--- keymap("n", "<M-h>", ":BufferLineMovePrev<CR>", opts)
--- keymap("n", "<M-L>", ":lua require'bufferline'.move_to(-1)<CR>", opts)
--- keymap("n", "<M-H>", ":lua require'bufferline'.move_to(1)<CR>", opts)
--- keymap("n", "<leader>bp", ":BufferLineTogglePin<CR>", opts)
-
--- Close buffers
--- keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
--- keymap("n", "<leader>bch", ":BufferLineCloseLeft<CR>", opts) -- close buffers to the left
--- keymap("n", "<leader>bcl", ":BufferLineCloseRight<CR>", opts) -- close buffers to the right
-
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
@@ -71,48 +53,6 @@ keymap("i", "<C-c>", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Plugins --
-
--- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-
---ToggleTerm
-keymap("n", "<leader>tn", function()
-  local name = vim.fn.input("Terminal name: ")
-  if name ~= "" then
-    vim.cmd("TermNew name=" .. name)
-  end
-end, opts)
--- keymap("n", "<leader>tn", ":TermNew name=", opts)
-keymap("n", "<leader>ts", ":TermSelect<CR>", opts)
-
--- Telescope
--- keymap("n", "<leader>ff", ":lua require'telescope'.extensions['recent-files'].recent_files({})<CR>", opts)
-keymap("n", "<leader>fF", ":Telescope frecency<CR>", opts)
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
-keymap("n", "<leader>fb", ":lua require'telescope.builtin'.buffers{ sort_mru = true }<CR>", opts)
-keymap("n", "<leader>fr", ":lua require'telescope.builtin'.registers{}<CR>", opts)
-keymap("n", "<leader>fq", ":lua require'telescope.builtin'.command_history{}<CR>", opts)
-keymap("n", "<leader>fs", ":lua require'telescope.builtin'.search_history{}<CR>", opts)
-keymap("n", "<leader>fm", ":lua require'telescope.builtin'.marks{}<CR>", opts)
--- keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>fc", ":Telescope commands<CR>", opts)
-keymap("n", "<leader>fd", ":Telescope diagnostics<CR>", opts)
-
--- Git
--- keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
-keymap("n", "<leader>gg", ":LazyGit<CR>", opts)
-keymap("n", "<leader>gf", ":LazyGitCurrentFile<CR>", opts)
-
--- Comment
--- keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
--- keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
-keymap("n", "<leader>/", "<cmd>lua require('Comment.api').locked('toggle.linewise.current')()<CR>", opts)
-keymap("x", "<leader>/", "<ESC><CMD>lua require('Comment.api').locked('comment.linewise')(vim.fn.visualmode())<CR>")
-
 -- carriage return fix
 keymap("n", "<leader>cr", ":%s/\\r//g<CR>", opts)
 
@@ -126,6 +66,3 @@ keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
-
--- Alpha menu
-keymap("n", "<leader>m", ":Alpha<CR>", opts)

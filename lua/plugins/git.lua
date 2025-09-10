@@ -21,6 +21,10 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
+        keys = {
+          { "<leader>gg", ":LazyGit<CR>", { silent = true} },
+          { "<leader>gf", ":LazyGitCurrentFile<CR>", { silent = true} },
+        },
     },
     { "f-person/git-blame.nvim", commit = "408d5487d908dfe5d48e5645d8b27ddcc16b11e0" }, -- the latest requires >= 0.8.0
 }
