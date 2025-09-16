@@ -171,11 +171,16 @@ return {
         telescope.setup {
           defaults = {
 
-            prompt_prefix = " ",
-            selection_caret = " ",
+            prompt_prefix = " ",
+            selection_caret = " ",
             path_display = { "truncate" },
             file_ignore_patterns = { ".git/", "node_modules", "package-lock.json" },
             file_sorter = file_sorter,
+            -- pickers = {
+            --   oldfiles = {
+            --     cwd_only = true
+            --   },
+            -- },
 
             mappings = {
               i = {
