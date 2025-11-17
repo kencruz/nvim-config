@@ -2,7 +2,7 @@ return {
 {
     -- My plugins here
     { "nvim-lua/plenary.nvim", commit = "55d9fe89e33efd26f532ef20223e5f9430c8b0c0" }, -- Useful lua functions used by lots of plugins
-    { "windwp/nvim-autopairs", commit = "fa6876f832ea1b71801c4e481d8feca9a36215ec",
+    { "windwp/nvim-autopairs", commit = "ae5b41ce880a6d850055e262d6dfebd362bb276e",
       config = function ()
         -- Setup nvim-cmp.
         local status_ok, npairs = pcall(require, "nvim-autopairs")
